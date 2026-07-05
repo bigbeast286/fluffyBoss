@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pet Vaccination Schedule</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+    margin:0;
+}
+
+/* Header */
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Circle Image */
+
+.circle-container{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:20px auto;
+    border:5px solid #2c3e50;
+}
+
+.circle-container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Tabs */
+
+.tabs{
+    text-align:center;
+    margin:20px;
+}
+
+.tabs button{
+    padding:10px 25px;
+    border:none;
+    background:#2c3e50;
+    color:white;
+    margin:5px;
+    cursor:pointer;
+    border-radius:20px;
+    font-size:16px;
+}
+
+.tabs button:hover{
+    background:#1abc9c;
+}
+
+/* Table container */
+
+.info-table{
+    width:80%;
+    margin:auto;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    padding:20px;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    padding:15px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+th{
+    background:#2c3e50;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+tr:hover{
+    background:#dff9fb;
+}
+
+/* Hide section */
+
+.hidden{
+    display:none;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<header>
+<h1>Pet Vaccination Schedule</h1>
+</header>
+
+<!-- Circle Image -->
+<div class="circle-container">
+<img src="2.img.jpg">
+</div>
+
+
+<!-- Tabs -->
+<div class="tabs">
+<button onclick="showDog()">Dog Schedule</button>
+<button onclick="showCat()">Cat Schedule</button>
+</div>
+
+
+
+<!-- Dog Table -->
+
+<div class="info-table" id="dog">
+
+<h2 style="text-align:center">Dog Vaccination Schedule</h2>
+
+<table>
+
+<tr>
+<th>Disease</th>
+<th>1st Vaccine</th>
+<th>Follow-up</th>
+</tr>
+
+<tr>
+<td>Canine Distemper</td>
+<td>6-8 Weeks</td>
+<td>Every 3-4 weeks until 14-16 weeks. Booster at 1 year then every 3 years</td>
+</tr>
+
+<tr>
+<td>Infectious Canine Hepatitis</td>
+<td>6-8 Weeks</td>
+<td>Given with combination vaccines</td>
+</tr>
+
+<tr>
+<td>Canine Parvovirus</td>
+<td>6-8 Weeks</td>
+<td>Given with combination vaccines</td>
+</tr>
+
+<tr>
+<td>Rabies</td>
+<td>3 Months</td>
+<td>Second dose after 1 year then every 1-3 years</td>
+</tr>
+
+</table>
+</div>
+
+
+
+<!-- Cat Table -->
+
+<div class="info-table hidden" id="cat">
+
+<h2 style="text-align:center">Cat Vaccination Schedule</h2>
+
+<table>
+
+<tr>
+<th>Disease</th>
+<th>1st Vaccine</th>
+<th>Follow-up</th>
+</tr>
+
+<tr>
+<td>Feline Panleukopenia</td>
+<td>6-8 Weeks</td>
+<td>Every 3-4 weeks until 16 weeks</td>
+</tr>
+
+<tr>
+<td>Feline Calicivirus</td>
+<td>6-8 Weeks</td>
+<td>Booster every 3 years</td>
+</tr>
+
+<tr>
+<td>Feline Viral Rhinotracheitis</td>
+<td>6-8 Weeks</td>
+<td>Booster every 3 years</td>
+</tr>
+
+<tr>
+<td>Rabies</td>
+<td>12 Weeks</td>
+<td>Booster every 1-3 years</td>
+</tr>
+
+</table>
+</div>
+
+
+
+<script>
+
+function showDog(){
+
+document.getElementById("dog").classList.remove("hidden");
+document.getElementById("cat").classList.add("hidden");
+
+}
+
+function showCat(){
+
+document.getElementById("cat").classList.remove("hidden");
+document.getElementById("dog").classList.add("hidden");
+
+}
+
+</script>
+
+
+</body>
+</html>

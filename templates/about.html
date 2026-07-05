@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %} about {% endblock %}
+
+{% block main %}
+
+<style>
+/* ===== GENERAL ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.title span {
+    color: #ff6b6b;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s ease;
+}
+
+.card img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* ===== TEAM ===== */
+.team-section {
+    background: #f9f9f9;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-card {
+    background: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s ease;
+}
+
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* ===== ANIMATION SHOW ===== */
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+    .cards, .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+
+<!-- ===== ABOUT US ===== -->
+<section>
+    <h1 class="title">About <span>PetCare Vet</span></h1>
+    <p class="subtitle">
+        We provide trusted pet products and professional veterinary consultation
+        to ensure your pets live a healthy and happy life.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <img src="">
+            <h3>Pet Products</h3>
+            <p>Premium food, toys, grooming tools and medicines for all pets.</p>
+        </div>
+
+        <div class="card">
+            <img src="">
+            <h3>Vet Consultation</h3>
+            <p>Online & offline consultation with certified veterinary doctors.</p>
+        </div>
+
+        <div class="card">
+            <img src="">
+            <h3>Complete Care</h3>
+            <p>We care for your pet like family with love & expertise.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="team-section">
+    <h2 class="title">Meet Our Team</h2>
+
+    <div class="team-cards">
+        <div class="team-card">
+            <img src="abhi.jpeg">
+            <h3>Abhishek Parihar</h3>
+            <p>Founder & Pet Specialist</p>
+        </div>
+
+        <div class="team-card">
+            <img src="vansh.jpeg">
+            <h3>Vansh Chauhan</h3>
+            <p>Frontend Developer</p>
+        </div>
+
+        <div class="team-card">
+            <img src="savyam.jpeg">
+            <h3>Savyam Sharma</h3>
+            <p>Backend Developer</p>
+        </div>
+
+        <div class="team-card">
+            <img src="bhanu.jpeg">
+            <h3>Bhanu Pratap Singh</h3>
+            <p>Database</p>
+        </div>
+    </div>
+</section>
+
+<script>
+/* ===== ANIMATION ON LOAD ===== */
+const items = document.querySelectorAll('.card, .team-card');
+items.forEach((item,index)=>{
+    setTimeout(()=>{
+        item.classList.add('show');
+    }, index * 200);
+});
+</script>
+
+{% endblock %}

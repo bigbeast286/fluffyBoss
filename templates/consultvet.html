@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %} consultvet {% endblock %}
+
+{% block main %}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    .hero-text h2 {
+      color: #4caf50;
+    }
+
+    .features {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      color: #4caf50;
+    }
+
+    .form-section {
+      margin-top: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section h2 {
+      color: #4caf50;
+      margin-bottom: 15px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    form input, form select, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    form textarea {
+      grid-column: span 2;
+      resize: none;
+      height: 100px;
+    }
+
+    .full {
+      grid-column: span 2;
+    }
+
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #43a047;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      background: #333;
+      color: white;
+    }
+  </style>
+
+  <header>
+    <h1>Pet Consultation</h1>
+    <p>We provide consultation only for Dogs, Cats, and Cows</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <img src="" alt="Pet Care">
+      <div class="hero-text">
+        <h2>Online Pet Consultation</h2>
+        <p>
+          Get professional veterinary advice for your dog, cat, or cow.
+          Our certified vets are here to help you keep your animals
+          healthy and happy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="card">
+        <h3>Dog Care</h3>
+        <p>Expert consultation for all dog breeds.</p>
+      </div>
+      <div class="card">
+        <h3>Cat Care</h3>
+        <p>Professional advice for kittens and adult cats.</p>
+      </div>
+      <div class="card">
+        <h3>Cow Care</h3>
+        <p>Veterinary guidance for healthy cattle.</p>
+      </div>
+    </div>
+
+    <!-- Consultation Form -->
+    <div class="form-section">
+      <h2>Book a Consultation</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Pet Name" required>
+
+        <select required>
+          <option value="">Select Pet Type</option>
+          <option>Dog</option>
+          <option>Cat</option>
+          <option>Cow</option>
+        </select>
+
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="date" required>
+
+        <textarea placeholder="Describe your pet’s issue..."></textarea>
+
+        <button type="submit" class="full">Book Now</button>
+      </form>
+    </div>
+
+  </div>
+
+  
+
+
+
+{% endblock %}

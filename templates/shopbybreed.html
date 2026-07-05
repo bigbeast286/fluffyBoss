@@ -1,0 +1,98 @@
+
+{% extends "base.html" %}
+
+{% block title %}Shop by Breed{% endblock %}
+
+{% block main %}
+
+<style>
+
+h1{
+    text-align:center;
+    margin:40px 0;
+    font-size:40px;
+}
+
+.breed-container{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+    flex-wrap:wrap;
+    margin-bottom:60px;
+}
+
+.breed-card{
+    text-decoration:none;
+    color:#222;
+    text-align:center;
+}
+
+.breed-card img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    transition:0.3s;
+}
+
+.breed-card img:hover{
+    transform:scale(1.08);
+    box-shadow:0 12px 25px rgba(0,0,0,.4);
+}
+
+.breed-card h3{
+    margin-top:15px;
+}
+
+</style>
+
+<h1>Shop by Breed</h1>
+
+<div class="breed-container">
+
+    <a href="shopbydogbreed.html" class="breed-card" id="dog">
+        <img src="https://placehold.co/180x180?text=Dog" alt="Dog">
+        <h3>Dogs</h3>
+    </a>
+
+    <a href="Shopbycatbreed.html" class="breed-card" id="cat">
+        <img src="https://placehold.co/180x180?text=Cat" alt="Cat">
+        <h3>Cats</h3>
+    </a>
+
+    <a href="#" class="breed-card" id="cow">
+        <img src="https://placehold.co/180x180?text=Cow" alt="Cow">
+        <h3>Cows</h3>
+    </a>
+
+</div>
+
+<script>
+
+const body=document.body;
+
+const bg={
+    dog:"https://placehold.co/1200x700?text=Dog",
+    cat:"https://placehold.co/1200x700?text=Cat",
+    cow:"https://placehold.co/1200x700?text=Cow"
+};
+
+for(let id in bg){
+
+    const card=document.getElementById(id);
+
+    card.addEventListener("mouseenter",()=>{
+        body.style.background=`url(${bg[id]}) center/cover no-repeat`;
+    });
+
+    card.addEventListener("mouseleave",()=>{
+        body.style.background="#f4f4f4";
+    });
+
+}
+
+</script>
+
+{% endblock %}
+

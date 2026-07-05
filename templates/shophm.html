@@ -1,0 +1,218 @@
+
+{% extends "base.html" %}
+
+{% block title %} shophm {% endblock %}
+
+{% block main %}
+
+<style>
+
+/* Page */
+body{
+  background: #f5f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+header{
+  text-align: center;
+  padding: 20px;
+}
+
+header h1{
+  margin-bottom: 10px;
+}
+
+/* Search bar */
+.search-form{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-form input{
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.search-form button{
+  padding: 8px 16px;
+  border: none;
+  background: #ff7200;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-form button:hover{
+  background: black;
+}
+
+/* Grid Layout */
+.product-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card */
+.product-card {
+  background: white;
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  opacity: 0;
+  animation: fadeInCards 0.8s forwards;
+}
+
+/* Hover Effect */
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Image */
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Text */
+.product-card h2{
+  margin: 10px 0;
+}
+
+.product-card p{
+  font-weight: bold;
+  color: #ff7200;
+}
+
+/* Buttons */
+.product-card button{
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Buy button */
+.product-card button:first-of-type{
+  background: #ff7200;
+  color: white;
+}
+
+/* Cart button */
+.product-card button:last-of-type{
+  background: black;
+  color: white;
+}
+
+.product-card button:hover{
+  opacity: 0.8;
+}
+
+/* Animation */
+@keyframes fadeInCards {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+
+<header>
+  <h1>Shop Homoeopathic Medicine</h1>
+  <form class="search-form">
+    <input type="search" id="search-input" placeholder="Search...">
+    <button type="submit">Search</button>
+  </form>
+</header>
+
+<main>
+  <section class="product-grid">
+
+    <div class="product-card">
+      <img src="{{ url_for('static', filename='p1.jpg') }}">
+      <h2>Product 1</h2>
+      <p>₹200</p>
+      <button>Buy now</button>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="{{ url_for('static', filename='p2.jpg') }}">
+      <h2>Product 2</h2>
+      <p>₹500</p>
+      <button>Buy now</button>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="{{ url_for('static', filename='p3.jpg') }}">
+      <h2>Product 3</h2>
+      <p>₹900</p>
+      <button>Buy now</button>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="{{ url_for('static', filename='p3.jpg') }}">
+      <h2>Product 3</h2>
+      <p>₹900</p>
+      <button>Buy now</button>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="{{ url_for('static', filename='p3.jpg') }}">
+      <h2>Product 3</h2>
+      <p>₹900</p>
+      <button>Buy now</button>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="{{ url_for('static', filename='p3.jpg') }}">
+      <h2>Product 3</h2>
+      <p>₹900</p>
+      <button>Buy now</button>
+      <button>Add to Cart</button>
+    </div>
+
+  </section>
+</main>
+
+<script>
+
+/* FIXED: use .product-card instead of .card */
+const cards = document.querySelectorAll(".product-card");
+
+/* Delay animation */
+cards.forEach((card, i) => {
+  card.style.animationDelay = (i * 0.2) + "s";
+});
+
+/* Add to cart alert */
+document.querySelectorAll('.product-card button').forEach(button => {
+  button.addEventListener('click', () => {
+    alert('Product added to cart!');
+  });
+});
+
+/* Search */
+const searchForm = document.querySelector('.search-form');
+const searchInput = document.querySelector('#search-input');
+
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log(searchInput.value);
+});
+
+</script>
+
+{% endblock %}
+

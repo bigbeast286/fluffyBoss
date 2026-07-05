@@ -1,0 +1,221 @@
+
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+
+<style>
+.main{ 
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), 
+    url("{{ url_for('static', filename='vet.webp') }}");
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+
+.navbar{
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+
+.icon{
+    width: 200px;
+    float: left;
+    height: 70px;
+}
+
+.logo{
+    color: #ff7200;
+    font-size: 70px;
+    font-family: impact;
+    padding-left:30px;
+    float: left;
+    padding-top: 10px;
+}
+
+.menu{
+    width: 800px;
+    float: left;
+    height: 100px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;   /* FIXED */
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 16px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    font-family: arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color:#ff7200;
+}
+
+.content{
+    width: 1300px;
+    margin: auto;
+    color: #fff;
+    position: relative;
+}
+
+.content h5{
+    font-family: 'Times New Roman';
+    font-size:50px;
+    padding-left:20px;
+    padding-bottom:100px;
+    margin-top: 9px;
+    letter-spacing: 2px;
+}
+
+.content span{
+    color: #ff7200;
+    font-size: 65px;
+}
+
+.cn{
+    width: 120px;
+    height: 35px;
+    background: #ff7200;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cn:hover{
+    background-color:#fff;
+    color: black;
+}
+
+.form{
+    width: 260px;
+    height: 380px;
+    background: rgba(0,0,0,0.8);
+    position: absolute;   /* FIXED */
+    top: 120px;
+    right: 100px;         /* FIXED */
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.form h2{
+    text-align: center;
+    background-color: #ff7200;
+    border-radius:10px;
+    padding:8px;
+}
+
+.form input{
+    width:100%;
+    height:35px;
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border: none;
+    color:white;
+    font-size:15px;
+    margin-top: 20px;
+}
+
+.form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color:white;
+}
+
+.btnn{
+    width:100%;
+    height:40px;
+    background: orangered;
+    border:none;
+    margin-top:25px;
+    font-size:18px;
+    border-radius: 10px;
+    cursor:pointer;
+    color:white;
+}
+
+.btnn:hover{
+    background:white;
+    color:orangered;
+}
+
+.link{
+    text-align:center;
+    margin-top:10px;
+}
+
+.link a{
+    color:#ff7200;
+    text-decoration:none;
+}
+</style>
+
+<div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo"><i>FLUFFY<br>BOSS</i></h2>
+        </div>
+    </div>
+
+    <div class="content">
+        <h5>Your Pet's Health<br>
+        <span>Is your Choice</span><br>
+        And Our Responsibility</h5>
+
+        <button class="cn">Join Us</button>
+
+        <div class="form">
+            <form id="loginForm" action="/login" method="POST">
+                <h2>Login Here</h2>
+
+               <form action="/login" method="POST">
+  <input type="email" name="email" placeholder="Enter Email" required>
+  <input type="password" name="password" placeholder="Enter Password" required>
+
+
+
+
+    <button class="btnn">Login</button>
+
+                <p class="link">Don't have an account?<br>
+              
+  <a href="{{ url_for('signup') }}">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+// document.getElementById("loginForm").addEventListener("submit", function(e) {
+//     e.preventDefault();
+
+//     const email = document.getElementById("email").value;
+
+//     alert("Login Successful! Welcome, " + email);
+
+//     window.location.href = "/vaccination";  // redirect
+// });</script>
+{% endblock %}

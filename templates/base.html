@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- External CSS -->
+<link rel="stylesheet" href="{{ url_for('static' , filename='globel.css') }}">
+</head>
+<body>
+
+    <!-- Navbar Start -->
+     {% include "navbar.html" %}
+    <!-- Navbar End -->
+
+
+    <!-- Main Start -->
+     <div class="container">
+        {% block main %} {% endblock %}
+     </div>
+    <!-- Main End -->
+
+
+    <!-- Footer Start -->
+     {% include "footer.html" %}
+    <!-- Footer End -->
+
+
+    
+</body>
+</html>
