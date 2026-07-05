@@ -5,14 +5,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 # ===== DATABASE CONNECTION =====
-conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Bhanu@123",
-    database="petcare"
-)
+# conn = mysql.connector.connect(
+    # host="localhost",
+    # user="root",
+    # password="Bhanu@123",
+    # database="petcare"
+# )
 
-cursor = conn.cursor()
+# cursor = conn.cursor()
 print("Database connected ✅")
 
 # ================= HOME =================
